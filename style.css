@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding-bottom: 80px;
+  background: linear-gradient(to bottom right, #f0faff, #e6f4ff);
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: white;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  background: #ffffff;
+  border-top: 1px solid #ccc;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+nav button {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #0077b6;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav button:hover {
+  background: #d0eaff;
+  color: #005f91;
+}
+
+.halaman {
+  display: none;
+  padding: 1.5rem 1rem;
+}
+
+.halaman.aktif {
+  display: block;
+}
+
+label {
+  display: block;
+  margin: 0.75rem 0 0.25rem;
+  font-weight: 600;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 0.65rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+button {
+  background: linear-gradient(135deg, #0077b6, #0099cc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #005f91, #0077b6);
+}
+
+button.reset {
+  background: linear-gradient(135deg, #e74c3c, #ff6b6b);
+}
+
+button.reset:hover {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+}
+
+.edit-karyawan {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.edit-karyawan input {
+  flex: 1 1 45%;
+}
+
+.bensin-container {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tabel-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+th {
+  background-color: #f1fbff;
+  font-weight: bold;
+}
+
+tr.selesai {
+  background: #d4edda;
+}
+
+#tabelOrderan td select,
+#tabelOrderan th select {
+  min-width: 100px;
+}
+
+/* Perbaikan kolom status */
+#tabelOrderan th:nth-child(8),
+#tabelOrderan td:nth-child(8),
+#tabelOrderan th:nth-child(9),
+#tabelOrderan td:nth-child(9) {
+  min-width: 140px;
+}
+
+@media (max-width: 600px) {
+
+  input,
+  select,
+  button {
+    font-size: 0.95rem;
+  }
+}
