@@ -1,4 +1,4 @@
-const CACHE_NAME = 'depot-3-putri-v10'; // GANTI versi tiap update file
+const CACHE_NAME = 'depot-3-putri-v11'; // GANTI versi tiap update file
 const urlsToCache = [
   '/',
   '/index.html',
