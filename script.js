@@ -1,4 +1,4 @@
-const HARGA = { RO: 12000, BIASA: 6000, WARUNG: 4000 };
+const HARGA = { RO: 10000, BIASA: 4000, WARUNG: 2500 };
 let data = JSON.parse(localStorage.getItem("data")) || [];
 let bensin = Number(localStorage.getItem("bensin")) || 0;
 
@@ -41,7 +41,7 @@ function tampilkanDaftarPesanan() {
 
   data.forEach((item, i) => {
     const hargaSatuan = item.jenis === "WARUNG" ? HARGA.WARUNG : HARGA[item.jenis];
-    const ongkirPerGalon = item.jenis === "WARUNG" ? 1500 : 2000;
+   const ongkirPerGalon = item.jenis === "WARUNG" ? 1500 : item.jenis === "RO" ? 3000 : 2000;
     const ongkir = item.ket === "DELIVERY" ? ongkirPerGalon * item.jumlah : 0;
     const total = item.jumlah * hargaSatuan + ongkir;
 
@@ -107,12 +107,12 @@ function tampilkanRingkasan() {
     totalGalon[d.jenis] += d.jumlah;
 
     const harga = HARGA[d.jenis];
-    const ongkirPerGalon = d.jenis === "WARUNG" ? 1500 : 2000;
+    const ongkirPerGalon = d.jenis === "WARUNG" ? 1500 : d.jenis === "RO" ? 3000 : 2000;
     const ongkir = d.ket === "DELIVERY" ? ongkirPerGalon * d.jumlah : 0;
     bruto += d.jumlah * harga + ongkir;
 
     if (d.ket === "DELIVERY") {
-      const upahPerGalon = d.jenis === "WARUNG" ? 1500 : 2000;
+      const upahPerGalon = d.jenis === "WARUNG" ? 1500 : d.jenis === "RO" ? 3000 : 2000;
       gaji[d.pengantar] += upahPerGalon * d.jumlah;
       jumlahAntar[d.pengantar] += d.jumlah;
     }
